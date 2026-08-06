@@ -30,7 +30,6 @@
       overflow-x: hidden;
     }
 
-    /* BINTANG & LIGHTING KELAP KELIP BACKGROUND */
     body::before {
       content: '';
       position: absolute;
@@ -46,9 +45,6 @@
       z-index: 1;
     }
 
-    /* ==========================================
-       1. BACKGROUND CAHAYA MELAYANG (GLOWING ORBS)
-       ========================================== */
     .bg-light-container {
       position: fixed;
       width: 100vw;
@@ -99,15 +95,9 @@
     }
 
     @keyframes floatBg {
-      0% {
-        transform: translate(0, 0) scale(1);
-      }
-      50% {
-        transform: translate(80px, -50px) scale(1.25);
-      }
-      100% {
-        transform: translate(-60px, 60px) scale(0.85);
-      }
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(80px, -50px) scale(1.25); }
+      100% { transform: translate(-60px, 60px) scale(0.85); }
     }
 
     .app {
@@ -117,7 +107,6 @@
       z-index: 10;
     }
 
-    /* SHELL BOX DENGAN KELAP KELIP NEON BORDER VIP */
     .game-shell {
       background: rgba(18, 10, 41, 0.85);
       backdrop-filter: blur(10px);
@@ -145,7 +134,7 @@
 
     .topbar {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
     .topbar .logo {
@@ -155,9 +144,6 @@
       filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
     }
 
-    /* ==========================================
-       2. EFEK LAMPU KELAP KELIP TEKS (NEON GLOW)
-       ========================================== */
     .brand-copy small {
       color: #ffe875;
       font-size: 13px;
@@ -170,11 +156,7 @@
     @keyframes neonTextBlink {
       0% {
         color: #ffd700;
-        text-shadow: 
-          0 0 5px #ffd700,
-          0 0 10px #ffd700,
-          0 0 20px #ffd700,
-          0 0 40px #ffd700;
+        text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 40px #ffd700;
         opacity: 1;
       }
       50% {
@@ -183,11 +165,7 @@
       }
       100% {
         color: #ffda6a;
-        text-shadow: 
-          0 0 5px #ffda6a,
-          0 0 15px #ffda6a,
-          0 0 30px #ffda6a,
-          0 0 60px #ffda6a;
+        text-shadow: 0 0 5px #ffda6a, 0 0 15px #ffda6a, 0 0 30px #ffda6a, 0 0 60px #ffda6a;
         opacity: 1;
       }
     }
@@ -225,7 +203,6 @@
       transform: scale(0.98);
     }
 
-    /* KELAP KELIP SCATTER */
     .btn-scatter {
       background: linear-gradient(180deg, #ffd700 0%, #ffffff 100%);
       color: #000;
@@ -238,7 +215,6 @@
       to { box-shadow: 0 0 25px rgba(255, 218, 106, 0.95), 0 0 10px #ffffff; }
     }
 
-    /* KELAP KELIP PETIR */
     .btn-petir {
       background: linear-gradient(180deg, #ffd700 0%, #d4af37 55%, #b8860b 100%);
       color: #fff;
@@ -373,7 +349,6 @@
       text-align: left;
     }
 
-    /* GRID LUCKY BOX */
     .lucky-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -438,7 +413,6 @@
       pointer-events: none;
     }
 
-    /* GRID GAME & GAMBAR */
     .game-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -554,12 +528,24 @@
       box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
       animation: submitGlow 1.2s infinite alternate;
     }
+
+    /* DESAIN TIMING TEKS HASIL MODAL */
+    .timer-text-inline {
+      color: #ffda6a;
+      font-weight: 900;
+      font-size: 16px;
+      letter-spacing: 1px;
+      background: rgba(0,0,0,0.4);
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid #ffd700;
+      display: inline-block;
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- ELEMENT BACKGROUND CAHAYA MELAYANG -->
   <div class="bg-light-container">
     <div class="light-orb orb-1"></div>
     <div class="light-orb orb-2"></div>
@@ -577,7 +563,6 @@
         </div>
       </header>
 
-      <!-- HOME DENGAN 3 TOMBOL UTAMA -->
       <div class="action-container">
         <button id="claimScatterBtn" class="btn-main btn-scatter" type="button">
           🎰 CLAIM SCATTER
@@ -600,7 +585,7 @@
     </section>
   </main>
 
-  <!-- ================= MODAL 1: CLAIM SCATTER ================= -->
+  <!-- MODAL 1: CLAIM SCATTER -->
   <div id="claimModalScatter" class="modal" role="dialog" aria-modal="true">
     <div class="modal-card">
       <button class="modal-close closeModal" type="button">✕</button>
@@ -611,7 +596,6 @@
         <input type="text" id="useridScatter" placeholder="Masukkan USER ID Anda..." autocomplete="off">
       </div>
 
-      <!-- TAHAP 1 SCATTER -->
       <div class="selection-section" id="secBoxScatter">
         <h3>1. AMBIL SCATTER GRATIS</h3>
         <p class="sub-label">Klik salah satu kotak di bawah</p>
@@ -631,7 +615,6 @@
         </div>
       </div>
 
-      <!-- TAHAP 2 SCATTER -->
       <div class="selection-section locked" id="secGameScatter">
         <h3>2. PILIH GAME UNTUK CLAIM SCATTER GRATIS</h3>
         <p class="sub-label gameSubLabel">Buka Lucky Box terlebih dahulu</p>
@@ -667,7 +650,7 @@
     </div>
   </div>
 
-  <!-- ================= MODAL 2: CLAIM PETIR ================= -->
+  <!-- MODAL 2: CLAIM PETIR -->
   <div id="claimModalPetir" class="modal" role="dialog" aria-modal="true">
     <div class="modal-card">
       <button class="modal-close closeModal" type="button">✕</button>
@@ -678,7 +661,6 @@
         <input type="text" id="useridPetir" placeholder="Masukkan USER ID Anda..." autocomplete="off">
       </div>
 
-      <!-- TAHAP 1 PETIR -->
       <div class="selection-section" id="secBoxPetir">
         <h3 style="color: #ffda6a;">1. AMBIL PETIR GRATIS</h3>
         <p class="sub-label">Klik salah satu petir di bawah</p>
@@ -698,7 +680,6 @@
         </div>
       </div>
 
-      <!-- TAHAP 2 PETIR -->
       <div class="selection-section locked" id="secGamePetir">
         <h3 style="color: #ffda6a;">2. PILIH GAME PETIR</h3>
         <p class="sub-label gameSubLabel">Buka Lucky Box terlebih dahulu</p>
@@ -731,7 +712,7 @@
     </div>
   </div>
 
-  <!-- MODAL HASIL & LINK DIRECT -->
+  <!-- MODAL HASIL -->
   <div id="resultModal" class="modal" role="dialog" aria-modal="true">
     <div class="modal-card">
       <button id="modalClose" class="modal-close" type="button">✕</button>
@@ -743,6 +724,7 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+
       const scatterOptions = ['3 SCATTER GRATIS', '4 SCATTER GRATIS', '5 SCATTER GRATIS'];
       const petirOptions = ['CLAIM X100', 'CLAIM X250', 'CLAIM X500', 'CLAIM X1000'];
 
@@ -751,7 +733,40 @@
       const resultModal = document.getElementById('resultModal');
       const modalText = document.getElementById('modalText');
 
-      // FUNGSI UTAMA PENGELOLAAN DUA MODAL SEPARAT
+      let timerInterval = null;
+
+      // LOGIKA TIMER HITUNG MUNDUR 6 JAM (FORMAT 06:00:00)
+      function startModalTimer(durationInSeconds) {
+        if (timerInterval) clearInterval(timerInterval);
+
+        let timeRemaining = durationInSeconds;
+
+        function updateDisplay() {
+          const hours = Math.floor(timeRemaining / 3600);
+          const mins = Math.floor((timeRemaining % 3600) / 60);
+          const secs = timeRemaining % 60;
+
+          const displayString = 
+            String(hours).padStart(2, '0') + ':' + 
+            String(mins).padStart(2, '0') + ':' + 
+            String(secs).padStart(2, '0');
+
+          const timerEl = document.getElementById('modalCountdown');
+          if (timerEl) {
+            timerEl.textContent = displayString;
+          }
+
+          if (timeRemaining > 0) {
+            timeRemaining--;
+          } else {
+            clearInterval(timerInterval);
+          }
+        }
+
+        updateDisplay();
+        timerInterval = setInterval(updateDisplay, 1000);
+      }
+
       function setupModalLogic(btnId, modalId, optionsList, useridInputId, submitBtnId, secGameId) {
         const triggerBtn = document.getElementById(btnId);
         const modal = document.getElementById(modalId);
@@ -782,13 +797,11 @@
           gameCards.forEach(card => card.classList.remove('active'));
         }
 
-        // Buka Modal
         triggerBtn.addEventListener('click', () => {
           resetModal();
           modal.style.display = 'flex';
         });
 
-        // Buka Box
         boxes.forEach(box => {
           box.addEventListener('click', function () {
             if (selectedReward !== '') return;
@@ -814,7 +827,6 @@
           });
         });
 
-        // Pilih Game
         gameCards.forEach(card => {
           card.addEventListener('click', () => {
             if (selectedReward === '') return;
@@ -826,7 +838,6 @@
           });
         });
 
-        // Submit & Proses Loading
         submitBtn.addEventListener('click', () => {
           const useridVal = useridInput.value.trim();
 
@@ -849,23 +860,27 @@
 
           setTimeout(() => {
             loadingModal.style.display = 'none';
+            
             modalText.innerHTML = `
               USER ID: <strong>${useridVal}</strong><br>
               BONUS: <strong style="color:#ffda6a;">${selectedReward}</strong><br>
               GAME: <strong style="color:#ffd700;">${selectedGame}</strong><br><br>
-              AKUN BISA LANGSUNG DIMAINKAN!<br>
-              KLIK TOMBOL DI BAWAH UNTUK MASUK KE GAME.
+              <span style="color:#ffda6a; font-weight: bold;">Waktu terus berjalan <span id="modalCountdown" class="timer-text-inline">06:00:00</span> pastikan Anda memulai sekarang sebelum kesempatan ini berakhir/span><br><br>
+              <strong>AKUN BISA LANGSUNG DIMAINKAN!</strong><br>
+              KLIK TOMBOL DI BAWAH UNTUK MASUK KE GAME
             `;
+            
             resultModal.style.display = 'flex';
+            
+            // 21.600 DETIK = 6 JAM PENUH
+            startModalTimer(21600);
           }, 3600);
         });
       }
 
-      // INIT MODAL SCATTER DAN MODAL PETIR
       setupModalLogic('claimScatterBtn', 'claimModalScatter', scatterOptions, 'useridScatter', 'submitScatterBtn', 'secGameScatter');
       setupModalLogic('claimPetirBtn', 'claimModalPetir', petirOptions, 'useridPetir', 'submitPetirBtn', 'secGamePetir');
 
-      // EVENT TUPUP ALL MODALS
       document.querySelectorAll('.closeModal').forEach(closeBtn => {
         closeBtn.addEventListener('click', () => {
           document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
@@ -874,11 +889,12 @@
 
       document.getElementById('modalClose').addEventListener('click', () => {
         resultModal.style.display = 'none';
+        if (timerInterval) clearInterval(timerInterval);
       });
     });
   </script>
-  <!-- Start of  Zendesk Widget script -->
-<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=a0a17d25-2ced-4090-8a66-e89bf3fa1b22"> </script>
-<!-- End of  Zendesk Widget script -->
+  <!-- Start of Zendesk Widget script -->
+  <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=a0a17d25-2ced-4090-8a66-e89bf3fa1b22"> </script>
+  <!-- End of Zendesk Widget script -->
 </body>
 </html>
